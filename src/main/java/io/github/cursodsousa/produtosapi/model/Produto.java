@@ -1,11 +1,27 @@
 package io.github.cursodsousa.produtosapi.model;
+
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 //POJO - Plain old java object
+@Entity
+@Table(name = "produto")//não é obrigatório quando o nome da tabela tem o mesmo nome da entidade
 public class Produto {
 
-
+    @Id//PRIMARY KEY
+    @Column(name = "id")// não é obrigatória nas propriedades que tem o mesmo nome no  BD, mas vamos colocar
     private String id;
+
+    @Column
     private String nome;
+
+    @Column
     private String descricao;
+
+    @Column
     private double preco;
 
 
